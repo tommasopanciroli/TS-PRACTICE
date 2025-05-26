@@ -28,3 +28,34 @@ const libro1 = new Libro(
 );
 
 libro1.descrivi();
+
+// ESERCIZIO 2: interfaccia + classe
+
+interface Veicolo {
+  marca: string;
+  anno: number;
+  dettagli(): string;
+}
+
+class Auto implements Veicolo {
+  constructor(
+    public marca: string,
+    public anno: number,
+    public modello: string
+  ) {}
+
+  dettagli(): string {
+    return (
+      `Marca: ` +
+      this.marca +
+      ", Modello: " +
+      this.modello +
+      ", Anno: " +
+      this.anno +
+      "."
+    );
+  }
+}
+
+const auto1 = new Auto("Ferrari", 2025, "SF90 Stradale");
+console.log(auto1.dettagli());
