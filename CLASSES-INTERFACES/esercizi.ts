@@ -59,3 +59,37 @@ class Auto implements Veicolo {
 
 const auto1 = new Auto("Ferrari", 2025, "SF90 Stradale");
 console.log(auto1.dettagli());
+
+// ESERCIZIO 3: classe con GETTER E SETTER
+
+class Contatore {
+  constructor(private _valore: number) {}
+
+  get valore() {
+    return this._valore;
+  }
+
+  set valore(v: number) {
+    if (v >= 0) {
+      this._valore = v;
+    } else {
+      throw new Error("Valore non valido");
+    }
+    this._valore = v;
+  }
+
+  incrementa(): number {
+    this._valore += 1;
+    return this._valore;
+  }
+}
+
+const conta1 = new Contatore(5);
+console.log(conta1.valore);
+conta1.incrementa();
+console.log(conta1.valore);
+
+conta1.valore = 10;
+console.log(conta1.valore);
+conta1.incrementa();
+console.log(conta1.valore);
