@@ -191,7 +191,7 @@ function contaMaggioriDi(numArray, soglia) {
 
   for (let i = 0; i < numArray.length; i++) {
     if (numArray[i] > soglia) {
-      contatore ++;
+      contatore++;
     }
   }
 
@@ -200,15 +200,64 @@ function contaMaggioriDi(numArray, soglia) {
 
 console.log(contaMaggioriDi([3, 11, 8, 10, 9, 44, 5], 10));
 
-function contaIniziali(parole, lettera){
+function contaIniziali(parole, lettera) {
   let contatore = 0;
 
-  for(let i = 0; i < parole.length; i++){
-    if(parole[i][0].toLowerCase() === lettera.toLowerCase()){
-      contatore++
+  for (let i = 0; i < parole.length; i++) {
+    if (parole[i][0].toLowerCase() === lettera.toLowerCase()) {
+      contatore++;
     }
   }
   return contatore;
 }
 
-console.log(contaIniziali(['ciao', 'giraffa', 'Gatto', 'Cane'], 'c'))
+console.log(contaIniziali(["ciao", "giraffa", "Gatto", "Cane"], "c"));
+
+function contaParoleLunghe(parole) {
+  let contatore = 0;
+
+  for (let i = 0; i < parole.length; i++) {
+    const parola = parole[i];
+    if (parola.length > 5) {
+      contatore++;
+    }
+  }
+
+  return contatore;
+}
+
+console.log(contaParoleLunghe(["chihuahua", "cane", "casa", "calcio"]));
+
+function contaParoleFiltrate(parole, lettera) {
+  let contatore = 0;
+
+  for (let i = 0; i < parole.length; i++) {
+    const parola = parole[i];
+    if (
+      parola.length > 5 &&
+      parole[i][0].toLowerCase() === lettera.toLowerCase()
+    ) {
+      contatore++;
+    }
+  }
+
+  return contatore;
+}
+
+console.log(
+  contaParoleFiltrate(["Giraffa", "giocattolo", "cane", "coding", "gioco"], "g")
+);
+
+function filtraParole(parole, lettera) {
+  let paroleFiltrate = [];
+
+  return parole.filter((parola) => {
+    return (
+      parola.length > 5 && parola[0].toLowerCase() === lettera.toLowerCase()
+    );
+  });
+}
+
+console.log(
+  filtraParole(["ciao", "Ciaone", "chiaro", "cagnolino", "gioco"], "c")
+);
