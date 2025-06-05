@@ -113,3 +113,102 @@ let fruits = ["mela", "banana", "kiwi", "fragola"];
 for (let i = 0; i <= fruits.length; i++) {
   console.log(fruits[i]);
 }
+
+function checkOrOdd(num) {
+  if (num % 2 == 0) {
+    return "Il numero è pari";
+  } else {
+    return "Il numero è dispari";
+  }
+}
+
+console.log(checkOrOdd(4));
+
+function generaMessaggio(nome, eta) {
+  if (eta >= 18) {
+    return `Ciao ${nome}, sei maggiorenne`;
+  } else {
+    return `Ciao ${nome}, sei minorenne`;
+  }
+}
+
+console.log(generaMessaggio("Anna", 21));
+
+function trovaPari(numeri) {
+  const pari = [];
+
+  for (let i = 0; i < numeri.length; i++) {
+    if (numeri[i] % 2 === 0) {
+      pari.push(numeri[i]);
+    }
+  }
+
+  return pari;
+}
+
+console.log(trovaPari([1, 2, 3, 4, 5, 6, 7, 8]));
+
+const persone = [
+  { nome: "Luca", eta: 17 },
+  { nome: "Anna", eta: 22 },
+  { nome: "Marco", eta: 16 },
+  { nome: "Giulia", eta: 30 },
+];
+
+function filtraMaggiorenni(persone) {
+  return persone.filter((persona) => persona.eta >= 18);
+}
+
+console.log(filtraMaggiorenni(persone));
+
+function sommaArray(numArray) {
+  let somma = 0;
+  for (let i = 0; i < numArray.length; i++) {
+    somma += numArray[i];
+  }
+
+  return somma;
+}
+
+console.log(sommaArray([1, 2, 3, 4]));
+
+function trovaMassimo(numArray) {
+  let massimo = numArray[0];
+
+  for (let i = 1; i < numArray.length; i++) {
+    if (numArray[i] > massimo) {
+      massimo = numArray[i];
+    }
+  }
+
+  return massimo;
+}
+
+console.log(trovaMassimo([2, 8, 3, 1, 12, 5]));
+
+function contaMaggioriDi(numArray, soglia) {
+  let contatore = 0;
+
+  for (let i = 0; i < numArray.length; i++) {
+    if (numArray[i] > soglia) {
+      contatore ++;
+    }
+  }
+
+  return contatore;
+}
+
+console.log(contaMaggioriDi([3, 11, 8, 10, 9, 44, 5], 10));
+
+function contaIniziali(parole, lettera){
+  let contatore = 0;
+
+  for(let i = 0; i < parole.length; i++){
+    if(parole[i][0].toLowerCase() === lettera.toLowerCase()){
+      contatore++
+    }
+  }
+  return contatore;
+}
+
+console.log(contaIniziali(['ciao', 'giraffa', 'Gatto', 'Cane'], 'c'))
